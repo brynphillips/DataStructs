@@ -14,7 +14,8 @@ makes the constructor and the overloading of the assignment operator private
 a full feature implementation should support
 copying and assigning list objects
 */
-template <typename E> class List { // List ADT
+template <typename E>
+class List { // List ADT
 private:
     void operator =(const List&) {} // Protect assignment
     List(const List&) {} // Protect copy constructor
