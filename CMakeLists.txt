@@ -3,4 +3,4 @@ project(DataStructs)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(DataStructs main.cpp arraybasedlist.h)
+add_executable(DataStructs main.cpp arrayBasedList.h freeList.h linkedList.h listInterface.h)
