@@ -8,6 +8,7 @@
 //#include <cassert>
 
     int main(int argc, char *argv[]) {
+    //Little fixes
 
         LList<int> test(0);
         //return a.exec();
