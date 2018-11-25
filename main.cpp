@@ -15,5 +15,5 @@
         for (int i = 0; i < 10; i++)
             test.insert(i); // adding 10 values. After this operation the curr (current pointer will be ath the tail)
         for (int i = 0; i < 10; i++)
-            std::cout << "Removed " << 9 - i << " th value " << test.remove() << endl; // removing 10 values
+            cout << "Removed " << 9 - i << " th value " << test.remove() << endl; // removing 10 values
     }
