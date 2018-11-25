@@ -15,10 +15,10 @@ the declaration for the abstract class Simple Stat
  */
 
 template <typename E>
-class SimpleStat:public List<E> { // SimpleStat ADT
+class SimpleStat { // SimpleStat ADT
 private:
-    void operator =(const SimpleStat&) {} //protect assignment
-    SimpleStat(const SimpleStat&) {} //protect copy assignment
+//    void operator =(const SimpleStat&) {} //protect assignment
+//    SimpleStat(const SimpleStat&) {} //protect copy assignment
 public:
     SimpleStat() = default; // Default constructor
     virtual ~SimpleStat() = default; //default destructor
