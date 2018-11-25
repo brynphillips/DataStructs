@@ -4,7 +4,9 @@
 
 #ifndef DATASTRUCTS_FREELIST_H
 #define DATASTRUCTS_FREELIST_H
+
 #include <iostream>
+
 template <typename E> class Link {
 private:
     static Link<E>* freelist; // Reference to freelist head
@@ -12,9 +14,11 @@ public:
     E element; // Value for this node
     Link* next; // Point to next node in list
 // Constructors
-    Link(const E& elemval, Link* nextval =NULL)
+    explicit Link(const E& elemval, Link* nextval =NULL)
     { element = elemval; next = nextval; }
-    Link(Link* nextval =NULL) { next = nextval; }
+
+    explicit Link(Link* nextval =NULL) { next = nextval; }
+
     void* operator new(size_t) { // Overloaded new operator
         if (freelist == NULL) return ::new Link; // Create space
         Link<E>* temp = freelist; // Can take from freelist

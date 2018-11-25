@@ -4,7 +4,7 @@
 
 #ifndef DATASTRUCTS_ARRAYBASEDLIST_H
 #define DATASTRUCTS_ARRAYBASEDLIST_H
-#include "ListInterface.h"
+#include "listInterface.h"
 #include "utilities.h"
 
 template <typename E> // Array-based list implementation

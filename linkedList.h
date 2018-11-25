@@ -4,9 +4,9 @@
 
 #ifndef DATASTRUCTS_LINKEDLIST_H
 #define DATASTRUCTS_LINKEDLIST_H
-//#include "Node.h"
+//#include "node.h"
 #include "freeList.h"
-#include "ListInterface.h"
+#include "listInterface.h"
 //#include <cassert>
 #include "utilities.h"
 
@@ -23,7 +23,7 @@ private:
     Link<E>* head; // Pointer to list header
     Link<E>* tail; // Pointer to last element
     Link<E>* curr; // Access to current element
-    int cnt; // Size of list
+    int cnt{}; // Size of list
     void init() { // Intialization helper method
         curr = tail = head = new Link<E>;
         cnt = 0;
@@ -36,7 +36,7 @@ private:
         }
     }
 public:
-    LList(int size) { init(); } // Constructor
+    explicit LList(int size) { init(); } // Constructor
     ~LList() { removeall(); } // Destructor
     void print() const; // Print list contents
     void clear() { removeall(); init(); } // Clear list
