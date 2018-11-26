@@ -41,5 +41,7 @@ int main(int argc, char *argv[]) {
 //    cout << array1.getValue() << endl;
 //    cout << array1.mode();
 //    cout << array1.mean();
-    cout << array1.SD();
+//    cout << array1.SD();
+    cout << array1.ssearch(88);
 }
+

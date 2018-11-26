@@ -52,6 +52,12 @@ public:
     virtual void moveToPos(int pos) = 0;
 // Return: The current element.
     virtual const E& getValue() const = 0;
+// Sequential search for element.
+    virtual int ssearch(const E& it) = 0;
+//// Binary search for element in iterative.
+//    virtual const E& ibsearch() const = 0;
+//// Binary search for element in recursive form.
+//    virtual const E& rbsearch() const = 0;
 };
 
 #endif //DATASTRUCTS_LISTINTERFACE_H

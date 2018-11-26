@@ -68,5 +68,15 @@ defaultSize is an optional parameter, if no paramenter is given to the array, de
         Assert((curr>=0)&&(curr<listSize),"No current element");
         return listArray[curr];
     }
+
+    int ssearch (const E& it) {
+        for (AList<E>::moveToStart(); AList<E>::currPos()<AList<E>::length();AList<E>::next()) {
+            cout << AList<E>::currPos() << ": " << AList<E>::getValue()<< endl;
+            if(AList<E>::getValue() == it) {
+                return AList<E>::currPos();
+            }
+        }
+        return false;
+    }
 };
 #endif //DATASTRUCTS_ARRAYBASEDLIST_H
