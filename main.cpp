@@ -30,11 +30,11 @@ int main(int argc, char *argv[]) {
 //Testing ArrayBasedSimpleStat
 
     ArrayBasedSimpleStat<double> array1(100);
-    vector<double> array2 = {88, 92, 88, 99, 102, 77, 80, 79, 103, 82, 102, 61, 101, 100};
+    vector<double> array2 = {88, 92, 88, 99, 102, 77, 80, 79, 103, 82, 102, 61, 101, 100, 11};
     sort(array2.begin(), array2.end());
     for (auto i: array2) {
         array1.append(i);
-//        cout << i << endl;
+        cout << i << endl;
     }
 
 //    cout << array1.currPos() << endl;
@@ -42,6 +42,8 @@ int main(int argc, char *argv[]) {
 //    cout << array1.mode();
 //    cout << array1.mean();
 //    cout << array1.SD();
-    cout << array1.ssearch(88);
+//    cout << array1.ssearch(88);
+    cout << array2[1] << endl;
+    cout << array1.ibsearch(100);
 }
 

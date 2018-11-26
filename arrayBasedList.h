@@ -70,13 +70,52 @@ defaultSize is an optional parameter, if no paramenter is given to the array, de
     }
 
     int ssearch (const E& it) {
-        for (AList<E>::moveToStart(); AList<E>::currPos()<AList<E>::length();AList<E>::next()) {
-            cout << AList<E>::currPos() << ": " << AList<E>::getValue()<< endl;
-            if(AList<E>::getValue() == it) {
-                return AList<E>::currPos();
+        for (AList<E>::moveToStart(); AList<E>::currPos()<AList<E>::length();AList<E>::next()) { //for loop for iteration
+            cout << AList<E>::currPos() << ": " << AList<E>::getValue()<< endl; //testing purposes
+            if(AList<E>::getValue() == it) {    //compare value
+                return AList<E>::currPos();     //return the position of that value.
             }
         }
-        return false;
+        return -1;
+    }
+
+    double ibsearch(const E& it) {
+        double begin = -1;  //set the beginning
+        double ending = length();   //set the ending
+        while (begin +1 != ending) {    //while the beginning != ending
+//            cout << "begin: " << begin << endl; // testing
+//            cout << "ending: " << ending << endl; // testing
+            double i = (begin+ending)/2;    // set the position to the middle
+            cout << "i: " << i << endl;
+            moveToPos(i);   //go to that position
+            if (it < getValue()) { //check to see if smaller then the value at that position
+                ending = i;         // if it is then set the ending at that position
+            }
+            if (it == getValue()) { //if it's equal then return that position
+                return i;
+            }
+            if (it > getValue()) { //if the value is bigger then set the beginning to that position
+                begin = i;
+            }
+        }
+        return -1; //return -1 if not found.
+    }
+
+    double rbsearch(const E& it, E& l, E& r) {
+//        int begin = -1;  //set the beginning
+//        int ending = length();   //set the ending
+        if (r >= 1) {
+            double mid = (begin+(r - 1)) / 2;
+            moveToPos(mid);
+            if(getValue() == it) {
+                return mid;
+            }
+            if(getValue() > it) {
+                mid - 1;
+                return rbsearch(it, l, mid-1);
+            }
+            return rbsearch(it, mid+1, r);
+        }
     }
 };
 #endif //DATASTRUCTS_ARRAYBASEDLIST_H
