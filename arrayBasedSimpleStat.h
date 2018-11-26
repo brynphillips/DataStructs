@@ -12,26 +12,57 @@ using namespace std;
 template <typename E>
 class ArrayBasedSimpleStat: public AList<E>, public SimpleStat<E> {
 private:
-//    void operator =(const ArrayBasedSimpleStat&) {} //protect assignment
-//    ArrayBasedSimpleStat(const ArrayBasedSimpleStat&) {} //protect copy assignment
+    void operator =(const ArrayBasedSimpleStat&) {} //protect assignment
+    ArrayBasedSimpleStat(const ArrayBasedSimpleStat&) {} //protect copy assignment
 public:
-//    ArrayBasedSimpleStat() = default; // Default constructor
-//    ~ArrayBasedSimpleStat() = default; //default destructor
-//    //Mode: most frequently occurring value
-//    const E mode() {
-//        for(auto i: AList<E>::listSize) {
-//            cout << AList<E>::getValue();
-//        }
-//    }
-//
-//    //Median: the middle value that separates the lower and upper halves of the data set. If
-//    // it is an even number of data set we take the we sum up the two middle values and divide
-//    // it by 2
-//    virtual const E median() const = 0;
-//    //Mean: the total or the sum divide by number of data items
-//    virtual const E mean() const = 0;
-//    //Standard deviation (SD): A measure of the spread of data point about the mean.
-//    virtual const E SD() const = 0;
+    explicit ArrayBasedSimpleStat() = default; // Default constructor
+    explicit ArrayBasedSimpleStat(E a) : AList<E>(a){};
+
+    ~ArrayBasedSimpleStat() = default;
+
+    E mode() {
+        int init = 1;
+        int max = 0;
+        int pos = 0;
+        int counter = 1;
+        int returnValue;
+        while (init != AList<E>::length()) {
+            int value = AList<E>::getValue();
+            AList<E>::next();
+            if(value == AList<E>::getValue()) {
+                cout << value << endl;
+                counter++;
+                returnValue = AList<E>::getValue();
+                if(counter > max) {
+                    max = counter;
+
+                }
+            }
+            counter = 1;
+            init++;
+        }
+        cout << "return value: " << returnValue << endl;
+        return returnValue;
+    }
+
+    E median() {
+        if(AList<E>::length() % 2 != 0) {
+            AList<E>::moveToPos(AList<E>::length()/2);
+            return AList<E>::currPos();
+        } else {
+            int middleLower = AList<E>::getValue(AList<E>::moveToPos(AList<E>::length()-1/2));
+            cout << middleLower;
+        }
+
+    }
+
+    E mean() {
+
+    }
+
+    E SD() {
+
+    }
 };
 
 #endif //DATASTRUCTS_ARRAYBASEDSIMPLESTAT_H

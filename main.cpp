@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <algorithm>
 #include "node.h"
 #include "freeList.h"
 #include "listInterface.h"
@@ -28,6 +29,16 @@ int main(int argc, char *argv[]) {
 
 //Testing ArrayBasedSimpleStat
 
-    ArrayBasedSimpleStat<int> simple(199);
+    ArrayBasedSimpleStat<int> array1(100);
+    vector<int> array2 = {88, 92, 88, 99, 102, 77, 80, 79, 103, 82, 102, 61, 101, 100};
+    sort(array2.begin(), array2.end());
+    for (int i: array2) {
+        array1.append(i);
+//        cout << i << endl;
+    }
 
+//    cout << array1.currPos() << endl;
+//    cout << array1.getValue() << endl;
+//    cout << array1.mode();
+array1.median();
 }

@@ -37,4 +37,26 @@ inline int Random(int n) {
     uniform_int_distribution<int> uniform_dist(1, 50);
     int mean = uniform_dist(el);
     return  mean - n; }
+
+    //mode calculator
+void calculateMode(int const array[], int size)
+{
+    int counter = 1;
+    int max = 0;
+    int mode = array[0];
+    for (int pass = 0; pass < size - 1; pass++)
+    {
+        if ( array[pass] == array[pass+1] )
+        {
+            counter++;
+            if ( counter > max )
+            {
+                max = counter;
+                mode = array[pass];
+            }
+        } else
+            counter = 1; // reset counter.
+    }
+    cout << "The mode is: " << mode << endl;
+}
 #endif //DATASTRUCTS_UTILITIES_H
