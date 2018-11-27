@@ -8,7 +8,7 @@
 #include "simpleStatADT.h"
 #include <iostream>
 #include <iomanip>
-#include <math.h>
+#include <cmath>
 
 using namespace std;
 
@@ -66,10 +66,10 @@ public:
     }
 
     E mean() {
-        double sum = 0.0;
-        for (int i = 0; i < AList<E>::length(); ++i) {
-            sum += AList<E>::getValue();
-            AList<E>::next();
+        double sum = 0.0;   //create a value for the sum
+        for (int i = 0; i < AList<E>::length(); ++i) { //iterate through the values
+            sum += AList<E>::getValue();    // add all current value to the sum
+            AList<E>::next();   //for to the next value;
         }
         return sum / AList<E>::length();
     }
