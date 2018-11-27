@@ -24,28 +24,7 @@ public:
     ~ArrayBasedSimpleStat() = default;
 
     E mode() {
-        int init = 1;
-        int max = 0;
-        int pos = 0;
-        int counter = 1;
-        int returnValue;
-        while (init != AList<E>::length()) {
-            int value = AList<E>::getValue();
-            AList<E>::next();
-            if (value == AList<E>::getValue()) {
-                cout << value << endl;
-                counter++;
-                returnValue = AList<E>::getValue();
-                if (counter > max) {
-                    max = counter;
-
-                }
-            }
-            counter = 1;
-            init++;
-        }
-//        cout << "return value: " << returnValue << endl;
-        return returnValue;
+        int
     }
 
     E median() {
@@ -59,7 +38,7 @@ public:
 //            cout << "Second" << endl; //  testing purposes
 //            cout << middleLower;  //
             AList<E>::moveToPos((AList<E>::length()) / 2);    //  Get the value at the middle of the sorted array
-            double middleUpper = AList<E>::getValue();      // set a double equal to that value
+            double middleUpper = AList<E>::getValue();      // set a double equal ®to that value
             return (middleLower + middleUpper) / 2.0;         // add them together and divide by two
         }
 
