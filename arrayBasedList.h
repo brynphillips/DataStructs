@@ -103,22 +103,22 @@ defaultSize is an optional parameter, if no paramenter is given to the array, de
 
     //****Get this working****
     double rbsearch(const E& it, E first, E last) {
-        if (last >= first) {
+        if (last >= first) {    //if the last index is still greater then the first then continue
 
-            cout << "1 IF last: " << last << endl;
-            cout << "1 IF begin: " << last << endl;
+            cout << "1 IF last: " << last << endl; // testing purposes
+            cout << "1 IF begin: " << last << endl; //testing purposes
 
-            double mid = (first+(last - 1)) / 2;
-            moveToPos(mid);
-            if(getValue() == it) {
-                return currPos();
+            double mid = (first+(last - 1)) / 2; // make the midpoint of the list the index to access
+            moveToPos(mid);                     //move to that index
+            if(getValue() == it) {              //check the value at the index if it's
+                return currPos();               //our search value, return the position
             }
-            if(getValue() > it) {
-                return rbsearch(it, first, mid-1);
+            if(getValue() > it) {               //if the value is at the mid is GREATER then the search value
+                return rbsearch(it, first, mid-1);  //return recursive function with the last index decresed by one.
             }
-            return rbsearch(it, mid+1, last);
-        }
-        else return -1;
+            return rbsearch(it, mid+1, last);       //else then the search value MUST be GREATER then the search value
+        }                                           //therefore increase the midpoint by one and pass as the 'first' value
+        else return -1;                             //if not found then it will return -1;
     }
 };
 #endif //DATASTRUCTS_ARRAYBASEDLIST_H
