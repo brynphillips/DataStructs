@@ -100,22 +100,25 @@ defaultSize is an optional parameter, if no paramenter is given to the array, de
         }
         return -1; //return -1 if not found.
     }
+
     //****Get this working****
-//    double rbsearch(const E& it, E& l, E& r) {
-////        int begin = -1;  //set the beginning
-////        int ending = length();   //set the ending
-//        if (r >= 1) {
-//            double mid = (begin+(r - 1)) / 2;
-//            moveToPos(mid);
-//            if(getValue() == it) {
-//                return mid;
-//            }
-//            if(getValue() > it) {
-//                mid - 1;
-//                return rbsearch(it, l, mid-1);
-//            }
-//            return rbsearch(it, mid+1, r);
-//        }
-//    }
-//};
+    double rbsearch(const E& it, E first, E last) {
+        if (last >= first) {
+
+            cout << "1 IF last: " << last << endl;
+            cout << "1 IF begin: " << last << endl;
+
+            double mid = (first+(last - 1)) / 2;
+            moveToPos(mid);
+            if(getValue() == it) {
+                return currPos();
+            }
+            if(getValue() > it) {
+                return rbsearch(it, first, mid-1);
+            }
+            return rbsearch(it, mid+1, last);
+        }
+        else return -1;
+    }
+};
 #endif //DATASTRUCTS_ARRAYBASEDLIST_H

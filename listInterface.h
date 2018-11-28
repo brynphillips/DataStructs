@@ -18,10 +18,10 @@ template <typename E>
 class List { // List ADT
 private:
     void operator =(const List&) {} // Protect assignment
-    List(const List&) {} // Protect copy constructor
+    List(const List&) = default; // Protect copy constructor
 public:
-    List() {} // Default constructor
-    virtual ~List() {} // Base destructor
+    List() = default; // Default constructor
+    virtual ~List() = default; // Base destructor
 // Clear contents from the list, to make it empty.
     virtual void clear() = 0;
 // Insert an element at the current location.
@@ -57,7 +57,7 @@ public:
 // Binary search for element in iterative.
     virtual double ibsearch(const E& it) = 0;
 // Binary search for element in recursive form.
-    virtual double rbsearch(const E& it, E& l, E& r) = 0;
+    virtual double rbsearch(const E& it, E l, E r) = 0;
 };
 
 #endif //DATASTRUCTS_LISTINTERFACE_H

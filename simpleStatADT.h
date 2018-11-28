@@ -7,18 +7,17 @@
 
 #include <iostream>
 #include "listInterface.h"
-using namespace std;
 
 
 /*
 the declaration for the abstract class Simple Stat
  */
-
+//
 template <typename E>
 class SimpleStat { // SimpleStat ADT
 private:
     void operator =(const SimpleStat&) {} //protect assignment
-    SimpleStat(const SimpleStat&) {} //protect copy assignment
+    SimpleStat(const SimpleStat&) = default;//protect copy assignment
 public:
     SimpleStat() = default; // Default constructor
     virtual ~SimpleStat() = default; //default destructor

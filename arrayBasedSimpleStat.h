@@ -9,6 +9,8 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
+#include <map>
+#include <stack>
 
 using namespace std;
 
@@ -24,7 +26,23 @@ public:
     ~ArrayBasedSimpleStat() = default;
 
     E mode() {
-        int
+        map<E, E> modeMap;
+        for (int i = 0; i < AList<E>::length(); ++i) {
+            ++modeMap[AList<E>::getValue()];
+            AList<E>::next();
+        }
+        auto x = max_element(modeMap.begin(), modeMap.end(), [](const pair<E, E>& a, const pair<E, E>& b) {
+            return a.second < b.second;
+        });
+//        stack<double> answer;
+//        answer.push(x->first);
+//        answer.push(x->second);
+
+//        cout << "stack size: " << answer.size() << endl;
+//        cout << "Map count: " << modeMap.count(x->second);
+
+//        return answer.top();
+        return x->first;
     }
 
     E median() {
@@ -45,6 +63,7 @@ public:
     }
 
     E mean() {
+        AList<E>::moveToStart();
         double sum = 0.0;   //create a value for the sum
         for (int i = 0; i < AList<E>::length(); ++i) { //iterate through the values
             sum += AList<E>::getValue();    // add all current value to the sum
@@ -57,7 +76,7 @@ public:
         float SD = 0.0;
         double mean = ArrayBasedSimpleStat::mean(); //gets the mean of the values
         AList<E>::moveToStart();    //move the current element to the start
-        cout << "mean: " << mean << endl;
+//        cout << "mean: " << mean << endl; //testing to make sure I'm getting the correct mean.
         for (int i = 0; i < AList<E>::length(); ++i) { //iterate through the array
             SD += (pow((AList<E>::getValue() - mean), 2)); //set SD to the of the value minus the mean to the second
             AList<E>::next();                              //power, then go to the next element.
