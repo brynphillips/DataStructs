@@ -80,13 +80,13 @@ defaultSize is an optional parameter, if no paramenter is given to the array, de
     }
 
     double ibsearch(const E& it) {
-        double begin = -1;  //set the beginning
-        double ending = length();   //set the ending
+        int begin = -1;  //set the beginning
+        int ending = length();   //set the ending
         while (begin +1 != ending) {    //while the beginning != ending
 //            cout << "begin: " << begin << endl; // testing
 //            cout << "ending: " << ending << endl; // testing
-            double i = (begin+ending)/2;    // set the position to the middle
-            cout << "i: " << i << endl;
+            int i = (begin+ending)/2;    // set the position to the middle
+//            cout << "i: " << i << endl;
             moveToPos(i);   //go to that position
             if (it < getValue()) { //check to see if smaller then the value at that position
                 ending = i;         // if it is then set the ending at that position
@@ -105,13 +105,13 @@ defaultSize is an optional parameter, if no paramenter is given to the array, de
     double rbsearch(const E& it, E first, E last) {
         if (last >= first) {    //if the last index is still greater then the first then continue
 
-            cout << "1 IF last: " << last << endl; // testing purposes
-            cout << "1 IF begin: " << last << endl; //testing purposes
+//            cout << "1 IF last: " << last << endl; // testing purposes
+//            cout << "1 IF begin: " << last << endl; //testing purposes
 
             int mid = (first+last) / 2; // make the midpoint of the list the index to access
             moveToPos(mid);                     //move to that index
-            cout << "mid: " << mid << endl;
-            cout << "Value: " << getValue() << endl;
+//            cout << "mid: " << mid << endl;
+//            cout << "Value: " << getValue() << endl;
             if(getValue() == it) {              //check the value at the index if it's
                 return currPos();               //our search value, return the position
             }

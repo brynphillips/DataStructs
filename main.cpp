@@ -28,8 +28,8 @@ int main(int argc, char *argv[]) {
 //    cout << "Mean: " << array1.mean() << endl;
 //    cout << "SD: " << array1.SD() << endl;
     cout << "rbsearch: " << array1.rbsearch(100, 0, array1.length()) << endl;
-//    cout << "ssearch: " << array1.ssearch(100) << endl;
+    cout << "ssearch: " << array1.ssearch(100) << endl;
 //    cout << array2[1] << endl;
-//    cout << array1.ibsearch(100);
+    cout << "ibsearch: " << array1.ibsearch(100) << endl;
 }
 
