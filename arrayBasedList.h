@@ -71,7 +71,7 @@ defaultSize is an optional parameter, if no paramenter is given to the array, de
 
     int ssearch (const E& it) {
         for (AList<E>::moveToStart(); AList<E>::currPos()<AList<E>::length();AList<E>::next()) { //for loop for iteration
-            cout << AList<E>::currPos() << ": " << AList<E>::getValue()<< endl; //testing purposes
+//            cout << AList<E>::currPos() << ": " << AList<E>::getValue()<< endl; //testing purposes
             if(AList<E>::getValue() == it) {    //compare value
                 return AList<E>::currPos();     //return the position of that value.
             }
@@ -108,12 +108,14 @@ defaultSize is an optional parameter, if no paramenter is given to the array, de
             cout << "1 IF last: " << last << endl; // testing purposes
             cout << "1 IF begin: " << last << endl; //testing purposes
 
-            double mid = (first+(last - 1)) / 2; // make the midpoint of the list the index to access
+            int mid = (first+last) / 2; // make the midpoint of the list the index to access
             moveToPos(mid);                     //move to that index
+            cout << "mid: " << mid << endl;
+            cout << "Value: " << getValue() << endl;
             if(getValue() == it) {              //check the value at the index if it's
                 return currPos();               //our search value, return the position
             }
-            if(getValue() > it) {               //if the value is at the mid is GREATER then the search value
+            else if(getValue() > it) {               //if the value is at the mid is GREATER then the search value
                 return rbsearch(it, first, mid-1);  //return recursive function with the last index decresed by one.
             }
             return rbsearch(it, mid+1, last);       //else then the search value MUST be GREATER then the search value

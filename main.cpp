@@ -11,22 +11,6 @@
 //#include <cassert>
 
 int main(int argc, char *argv[]) {
-    //Little fixes2
-//Linked List Test
-//    LList<int> test(0);
-//    //return a.exec();
-//    for (int i = 0; i < 10; i++)
-//        test.insert(i); // adding 10 values. After this operation the curr (current pointer will be ath the tail)
-//    for (int i = 0; i < 10; i++)
-//        cout << "Removed " << 9 - i << " th value " << test.remove() << endl; // removing 10 values
-
-//Array List test
-//    AList<int> simple(100);
-//    simple.insert(10);
-//    cout << simple.length() << endl;
-//    cout << simple.currPos() << endl;
-//    cout << simple.getValue();
-
 //Testing ArrayBasedSimpleStat
 
     ArrayBasedSimpleStat<double> array1(100);
@@ -39,12 +23,12 @@ int main(int argc, char *argv[]) {
 
 //    cout << array1.currPos() << endl;
 //    cout << array1.getValue() << endl;
-    cout << "Mode: " << array1.mode() << endl;
-    cout << "Median: " << array1.median() << endl;
-    cout << "Mean: " << array1.mean() << endl;
-    cout << "SD: " << array1.SD() << endl;
-    cout << "rbsearch: " << array1.rbsearch(103, 0, array1.length()) << endl;
-    cout << "ssearch: " << array1.ssearch(88) << endl;
+//    cout << "Mode: " << array1.mode() << endl;
+//    cout << "Median: " << array1.median() << endl;
+//    cout << "Mean: " << array1.mean() << endl;
+//    cout << "SD: " << array1.SD() << endl;
+    cout << "rbsearch: " << array1.rbsearch(100, 0, array1.length()) << endl;
+//    cout << "ssearch: " << array1.ssearch(100) << endl;
 //    cout << array2[1] << endl;
 //    cout << array1.ibsearch(100);
 }
