@@ -27,6 +27,7 @@ int main(int argc, char *argv[]) {
 //    cout << "Median: " << array1.median() << endl;
 //    cout << "Mean: " << array1.mean() << endl;
 //    cout << "SD: " << array1.SD() << endl;
+    //Some codingkosndofsdkfjs
     cout << "rbsearch: " << array1.rbsearch(100, 0, array1.length()) << endl;
     cout << "ssearch: " << array1.ssearch(100) << endl;
 //    cout << array2[1] << endl;
